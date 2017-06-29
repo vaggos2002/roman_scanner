@@ -1,0 +1,53 @@
+
+tests.py
+--------
+
+The tests.py script contains automated tests for testing the functionality of the 'RomanConvertor' script.
+It was developed in Python 2.7 and has no third party dependencies. To execute the test suite:
+'''
+	# Add execute only access permission
+    chmod +x tests.py
+    # Execute the test cases
+    ./tests.py
+'''
+
+Known issues to be discussed
+````````````````````````````
+1) Roman numerals containing invalid latin characters e.g. CRA (in this case 'A' is not a valid roman latin character),
+they do not return 0.
+
+Input : CRA
+Actual output : 100
+Expected output: 0
+
+2) Very big numbers (1,000 - 1,000,000 V̅L̅C̅M̅) are not recognisable by the script.
+
+Input : V̅
+Actual output : 5
+Expected output : 5,000
+
+
+roman_scanner.py
+----------------
+The roman_scanner.py script is a basic framework  to scan online plain text documents for roman numeral
+and report where they are found. It was developed in Python 2.7 and has no third party dependencies.
+To execute the script:
+'''
+	# Add execute only access permission
+    chmod +x roman_scanner.py
+    # Execute the script
+    ./roman_scanner.py
+'''
+
+The script will scan the online document in this order :
+
+- http://www.gutenberg.org/files/54610/54610-0.txt
+- http://www.gutenberg.org/files/54611/54611-0.txt
+- http://www.gutenberg.org/cache/epub/54612/pg54612.txt
+- http://www.gutenberg.org/files/54613/54613-0.txt
+
+Known issues to be discussed
+````````````````````````````
+1) The script identifies many false-positive words as potential roman numerals. For instance 'I' personal pronoun, and
+valid english words which are valid roman numerals 'id'.
+
